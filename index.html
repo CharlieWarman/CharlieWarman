@@ -6,6 +6,143 @@
     <title>Home</title>
 
     <link rel="stylesheet" href="css/styles.css" />
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Verdana, sans-serif;
+        margin: 0;
+      }
+      .mySlides {
+        display: none;
+      }
+      img {
+        vertical-align: middle;
+      }
+
+      /* Slideshow container */
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+
+      /* Next & previous buttons */
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      /* Position the "next button" to the right */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      /* On hover, add a black background color with a little bit see-through */
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      /* Caption text */
+      .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+
+      /* The dots/bullets/indicators */
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active,
+      .dot:hover {
+        background-color: #717171;
+      }
+
+      /* Fading animation */
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @-webkit-keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px;
+        }
+      }
+
+      .slideshow-one {
+        margin-top: 50px;
+      }
+
+      .socials {
+        margin-top: 200px;
+        text-align: center;
+      }
+
+      .news {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <img class="logo" src="img/logo.png" alt="Logo" />
@@ -25,27 +162,107 @@
       </a>
     </div>
 
-    <section id="recent-news">
-      <h1 class="sectionone"><b>Featured Articles</b></h1>
-      <img src="img/boris.jpg" width="50%" alt="Latest News Image" />
-      <p><b> Did Boris get it WRONG?</b></p>
+    <div class="slideshow-one">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <a href="contact.html"
+            ><img src="img/wearehiring.png" style="width: 100%"
+          /></a>
+          <div class="text">We are hiring!</div>
+        </div>
 
-      <p style="color: black">
-        After a recent discussion, did Boris get it wrong? What now?
-      </p>
-      <a href="news.html"><button class="button6">Read More!</button></a>
-    </section>
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <a href="news.html"
+            ><img src="img/breakingnews.jpg" style="width: 100%"
+          /></a>
+          <div class="text">More news has been released!</div>
+        </div>
 
-    <section id="recent-news">
-      <img src="img/joe.jpg" width="50%" alt="Latest News Image" />
-      <p><b> New rules to be put in place</b></p>
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="img/joebiden2.jpg" style="width: 100%" />
+          <div class="text">Joe Biden</div>
+        </div>
 
-      <p style="color: black">
-        Joe Biden may have hinted at the implementation of new rules within a
-        certain sector.
-      </p>
-      <a href="news.html"><button class="button6">Read More!</button></a>
-    </section>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br />
+
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+      }
+    </script>
+
+    <div class="news">
+      <section id="recent-news">
+        <h1 class="sectionone"><b>Featured Articles</b></h1>
+        <img src="img/boris.jpg" width="50%" alt="Latest News Image" />
+        <p><b> Did Boris get it WRONG?</b></p>
+
+        <p style="color: black">
+          After a recent discussion, did Boris get it wrong? What now?
+        </p>
+        <a href="news.html"><button class="button6">Read More!</button></a>
+      </section>
+
+      <section id="recent-news">
+        <img src="img/joe.jpg" width="50%" alt="Latest News Image" />
+        <p><b> New rules to be put in place</b></p>
+
+        <p style="color: black">
+          Joe Biden may have hinted at the implementation of new rules within a
+          certain sector.
+        </p>
+        <a href="news.html"><button class="button6">Read More!</button></a>
+      </section>
+    </div>
+
+    <div class="socials">
+      <section id="socials">
+        <p><b> Follow our social media! </b></p>
+        <img src="img/phone.png" style="width: 10%" />
+        <p style="color: black">The best way to find out what we are up to!</p>
+        <a href="#"><button class="button6">Our Twitter!</button></a>
+      </section>
+    </div>
 
     <footer class="footer-distributed">
       <div class="footer-left">
