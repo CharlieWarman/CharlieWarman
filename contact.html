@@ -1,0 +1,81 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body>
+    <img class="logo" src="img/logo.png" alt="Logo" />
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+
+    <div class="container-one">
+      <h1>This is where you can contact us.</h1>
+      <h4>Dont be afraid! We dont bite.</h4>
+      <a href="news.html">
+        <button class="button button5">Want to go back to your news?</button>
+      </a>
+    </div>
+
+    <div class="container">
+      <div style="text-align: center">
+        <h1>We are here for you, whenever you need us!</h1>
+        <p>
+          Try to be as detailed as possible with your message so we can help you
+          the best we can!
+        </p>
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="img/contact.svg" style="width: 100%" />
+        </div>
+        <div class="column">
+          <form action="/action_page.php">
+            <label for="fname">First Name</label>
+            <input
+              type="text"
+              id="fname"
+              name="firstname"
+              placeholder="Your name.."
+            />
+            <label for="lname">Email</label>
+            <input
+              type="text"
+              id="lname"
+              name="lastname"
+              placeholder="Your email.."
+            />
+            <label for="subject">Subject</label>
+            <textarea
+              id="subject"
+              name="subject"
+              placeholder="Your message.."
+              style="height: 170px"
+            ></textarea>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer-distributed">
+      <div class="footer-left">
+        <p class="footer-links">
+          Fake News, your place to find real news from trusted sources. Dont
+          believe the crowd, dont be deceived!
+        </p>
+
+        <p>Fake News Real News &copy; 2021</p>
+      </div>
+    </footer>
+  </body>
+</html>
