@@ -78,20 +78,21 @@ li a:hover {
 .button6 {
   outline: 0;
   display: inline-block;
-  padding: 10px;
-  color: black;
-  background-color: #ffffff;
+  padding: 8px;
+  color: rgb(54, 54, 54);
+  background-color: rgb(187, 255, 160);
   text-align: center;
   cursor: pointer;
   width: 20%;
-  border-color: black;
-  font-size: 16px;
+  height: 5%;
+  border-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  margin-bottom: 20px;
 }
 
 .button6:hover {
-  background-color: rgb(92, 92, 92);
+  background-color: rgb(75, 116, 71);
   color: white;
-  border-color: white;
 }
 
 .footer-distributed {
@@ -183,17 +184,18 @@ li a:hover {
 }
 
 .button {
-  border: none;
   outline: 0;
   display: inline-block;
   padding: 8px;
-  color: white;
-  background-color: #000;
+  color: rgb(54, 54, 54);
+  background-color: rgb(187, 255, 160);
   text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 20%;
+  height: 5%;
+  border-color: rgb(54, 54, 54);
 }
 
 .button:hover {
-  background-color: #555;
+  background-color: rgb(75, 116, 71);
 }
