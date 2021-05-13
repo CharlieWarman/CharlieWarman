@@ -6,6 +6,50 @@
     <title>Home</title>
 
     <link rel="stylesheet" href="css/styles.css" />
+
+    <style>
+      /* Style the tab */
+      .tab {
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        width: 30%;
+        height: 300px;
+      }
+
+      /* Style the buttons inside the tab */
+      .tab button {
+        display: block;
+        background-color: inherit;
+        color: black;
+        padding: 22px 16px;
+        width: 100%;
+        border: none;
+        outline: none;
+        text-align: left;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 17px;
+      }
+
+      /* Change background color of buttons on hover */
+      .tab button:hover {
+        background-color: #ddd;
+      }
+
+      /* Create an active/current "tab button" class */
+      .tab button.active {
+        background-color: #ccc;
+      }
+
+      /* Style the tab content */
+      .tabcontent {
+        padding: 0px 12px;
+        border: 1px solid #ccc;
+        width: 70%;
+        border-left: none;
+        height: 300px;
+      }
+    </style>
   </head>
   <body>
     <img class="logo" src="img/logo.png" alt="Logo" />
@@ -22,19 +66,29 @@
       <h4>Get lost in our many articles.</h4>
     </div>
 
-    <section id="recent-news">
-      <h1 class="sectionone"><b>NEWS</b></h1>
-      <img src="img/boris.jpg" width="50%" alt="Latest News Image" />
-      <p><b> Did Boris get it WRONG?</b></p>
+    <div class="tab">
+      <button
+        class="tablinks"
+        onclick="openCity(event, 'London')"
+        id="defaultOpen"
+      >
+        Boris Johnson involving with the ESL? Did he get it wrong?
+      </button>
+      <button class="tablinks" onclick="openCity(event, 'Paris')">
+        Biden's new rules.
+      </button>
+      <button class="tablinks" onclick="openCity(event, 'Tokyo')">
+        Coming Soon!
+      </button>
+    </div>
 
-      <p style="color: black">
+    <div id="London" class="tabcontent">
+      <h3>Boris Johnson involving with the ESL?</h3>
+      <p>
         The ESL, also known as the European Super League, has provided much
         controversy. Boris has given messages of his involvement but what can he
-        do?
-      </p>
-      <p style="color: black">
-        One of the plans is to prevent teams from obtaining visas for their
-        palyers, meaning they will not be able to travel. The Prime Minister
+        do? One of the plans is to prevent teams from obtaining visas for their
+        players, meaning they will not be able to travel. The Prime Minister
         Boris Johnson has said the clubs, which include Manchester United,
         Manchester City, Chelsea, Arsenal, Liverpool and Spurs, 'must answer to
         their fans' before launching the 'very damaging' change. He said the
@@ -50,39 +104,44 @@
         they needed to have a link with their fans and communities, with
         supporters already threatening to tear up season tickets and protest
         outside stadiums in huge numbers if the 'money-grabbing' owners pursue
-        it. Manchester United legend Gary Neville has laid into the club's
-        American owners. He said: 'It's pure greed, they're impostors. The
-        owners of Man United, Liverpool, Chelsea and Man City have nothing to do
-        with football in this country. The fans that come into this ground are
-        the people who matter. Forget them [Glazers] they're nothing to do with
-        this club in terms of the actual history of the club and the long-term
-        future. I would come down on them like a ton of bricks'. Sir Alex
-        Ferguson, Manchester United's most successful manager who is still on
-        the club's board said: 'Talk of a Super League is a move away from 70
-        years of European club football. In my time at United, we played in four
-        Champions League finals and they were always the most special of
-        nights.'
+        it.
       </p>
-      <p style="color: black">Stay tuned, more to come from this soon...</p>
-    </section>
+    </div>
 
-    <section id="recent-news">
-      <img src="img/joe.jpg" width="50%" alt="Latest News Image" />
-      <p><b> New rules to be put in place</b></p>
-
-      <p style="color: black">
+    <div id="Paris" class="tabcontent">
+      <h3>Biden's New Rules.</h3>
+      <p>
         Joe Biden may have hinted at the implementation of new laws within
         America. Not much, only hints and rumours, has been said about this.
-      </p>
-      <p style="color: black">
         Here are fake news, we are trying to stay up to date with this to
-        provide you with the correct information.
+        provide you with the correct information. Lack of exposure on this topic
+        may be due to a fear of critisim from Joe.
       </p>
-      <p style="color: black">
-        Lack of exposure on this topic may be due to a fear of critisim from
-        Joe.
-      </p>
-    </section>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+      <h3>No news here yet....</h3>
+      <p>Looks like this is empty..</p>
+    </div>
+
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
 
     <footer class="footer-distributed">
       <div class="footer-left">
