@@ -168,6 +168,14 @@ li a:hover {
   color: white;
 }
 
+.about-text {
+  padding: 50px;
+  text-align: center;
+  background-color: #292929;
+  color: white;
+  margin-top: 10px;
+}
+
 .container {
   padding: 0 16px;
 }
